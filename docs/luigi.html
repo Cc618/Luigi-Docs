@@ -1,0 +1,1116 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Luigi &mdash; Luigi  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Inputs" href="inputs.html" />
+    <link rel="prev" title="Welcome to Luigi’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Luigi
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Luigi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inputs.html">Inputs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Luigi</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Luigi</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/luigi.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-luigi">
+<span id="luigi"></span><h1>Luigi<a class="headerlink" href="#module-luigi" title="Permalink to this headline">¶</a></h1>
+<p>Luigi 2D game engine</p>
+<dl class="class">
+<dt id="luigi.AnimatedFrame">
+<em class="property">class </em><code class="descclassname">luigi.</code><code class="descname">AnimatedFrame</code><span class="sig-paren">(</span><em>self: luigi.AnimatedFrame, texture_name: str, regions: List[lg::Box], fps: float, i: int = 0</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.AnimatedFrame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#luigi.IndexedFrame" title="luigi.IndexedFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">luigi.IndexedFrame</span></code></a></p>
+<p>(<strong>frame</strong>) An animated texture region.</p>
+<dl class="method">
+<dt id="luigi.AnimatedFrame.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><em>self: luigi.AnimatedFrame</em><span class="sig-paren">)</span> &#x2192; luigi.Frame<a class="headerlink" href="#luigi.AnimatedFrame.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clones itself.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.AnimatedFrame.get_transform">
+<code class="descname">get_transform</code><span class="sig-paren">(</span><em>self: luigi.AnimatedFrame</em><span class="sig-paren">)</span> &#x2192; lg::Mat3<a class="headerlink" href="#luigi.AnimatedFrame.get_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the texture coordinates transform for the current region.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="luigi.AnimatedFrame.i">
+<code class="descname">i</code><a class="headerlink" href="#luigi.AnimatedFrame.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="luigi.AnimatedFrame.rect">
+<code class="descname">rect</code><a class="headerlink" href="#luigi.AnimatedFrame.rect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="luigi.AnimatedFrame.texture">
+<code class="descname">texture</code><a class="headerlink" href="#luigi.AnimatedFrame.texture" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="luigi.Box">
+<em class="property">class </em><code class="descclassname">luigi.</code><code class="descname">Box</code><span class="sig-paren">(</span><em>self: luigi.Box</em>, <em>x: float = 0</em>, <em>y: float = 0</em>, <em>width: float = 0</em>, <em>height: float = 0</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Box" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>(<strong>maths</strong>) A 2D region describing an axis aligned bounding box.</p>
+<dl class="method">
+<dt id="luigi.Box.collides">
+<code class="descname">collides</code><span class="sig-paren">(</span><em>self: luigi.Box</em>, <em>other: luigi.Box</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#luigi.Box.collides" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether the box collides with another box.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Box.contains">
+<code class="descname">contains</code><span class="sig-paren">(</span><em>self: luigi.Box</em>, <em>x: float</em>, <em>y: float</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#luigi.Box.contains" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether the box contains the point.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="luigi.Box.height">
+<code class="descname">height</code><a class="headerlink" href="#luigi.Box.height" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="staticmethod">
+<dt id="luigi.Box.tape">
+<em class="property">static </em><code class="descname">tape</code><span class="sig-paren">(</span><em>x: float</em>, <em>y: float</em>, <em>width: float</em>, <em>height: float</em>, <em>n: int</em>, <em>horizontal: bool = True</em><span class="sig-paren">)</span> &#x2192; List[luigi.Box]<a class="headerlink" href="#luigi.Box.tape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a list of boxes from <code class="docutils literal notranslate"><span class="pre">n</span></code> regions placed at the same x / y level.</p>
+<p>The first region is Box(x, y, width, height).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>n</strong> – Number of regions.</li>
+<li><strong>horizontal</strong> – True if the regions share the same y level, False if they share the same x level.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="luigi.Box.width">
+<code class="descname">width</code><a class="headerlink" href="#luigi.Box.width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="luigi.Box.x">
+<code class="descname">x</code><a class="headerlink" href="#luigi.Box.x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="luigi.Box.y">
+<code class="descname">y</code><a class="headerlink" href="#luigi.Box.y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="luigi.Camera">
+<em class="property">class </em><code class="descclassname">luigi.</code><code class="descname">Camera</code><a class="headerlink" href="#luigi.Camera" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<blockquote>
+<div>(<strong>camera</strong>) A 2D camera describing a view.</div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The width of the camera is calculated by its height and the screen aspect ratio.</p>
+</div>
+<dl class="attribute">
+<dt id="luigi.Camera.height">
+<code class="descname">height</code><a class="headerlink" href="#luigi.Camera.height" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="luigi.Camera.main">
+<code class="descname">main</code><em class="property"> = None</em><a class="headerlink" href="#luigi.Camera.main" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="luigi.Camera.name">
+<code class="descname">name</code><a class="headerlink" href="#luigi.Camera.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="luigi.Camera.rot">
+<code class="descname">rot</code><a class="headerlink" href="#luigi.Camera.rot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="luigi.Camera.set">
+<code class="descname">set</code><span class="sig-paren">(</span><em>self: luigi.Camera</em>, <em>x: float = 0</em>, <em>y: float = 0</em>, <em>height: float = -1</em>, <em>rot: float = -1</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Camera.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the properties of the camera.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If height or rot == -1, then height / rot is not changed.</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="luigi.Camera.width">
+<code class="descname">width</code><a class="headerlink" href="#luigi.Camera.width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="luigi.Camera.x">
+<code class="descname">x</code><a class="headerlink" href="#luigi.Camera.x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="luigi.Camera.y">
+<code class="descname">y</code><a class="headerlink" href="#luigi.Camera.y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="luigi.CompoundFrame">
+<em class="property">class </em><code class="descclassname">luigi.</code><code class="descname">CompoundFrame</code><span class="sig-paren">(</span><em>self: luigi.CompoundFrame, frames: Dict[str, luigi.Frame], first: str</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.CompoundFrame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#luigi.Frame" title="luigi.Frame"><code class="xref py py-class docutils literal notranslate"><span class="pre">luigi.Frame</span></code></a></p>
+<p>(<strong>frame</strong>) Gathers multiple frames, they can be changed with the <code class="docutils literal notranslate"><span class="pre">current</span></code> property.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Useful to make animations with instances of <a class="reference internal" href="#luigi.AnimatedFrame" title="luigi.AnimatedFrame"><code class="xref py py-class docutils literal notranslate"><span class="pre">AnimatedFrame</span></code></a>.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>frames</strong> – A dict of frames.</li>
+<li><strong>first</strong> – The name of the first frame.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="luigi.CompoundFrame.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><em>self: luigi.CompoundFrame</em><span class="sig-paren">)</span> &#x2192; luigi.Frame<a class="headerlink" href="#luigi.CompoundFrame.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clones itself.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="luigi.CompoundFrame.current">
+<code class="descname">current</code><a class="headerlink" href="#luigi.CompoundFrame.current" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes the current frame by its name.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.CompoundFrame.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>self: luigi.CompoundFrame</em><span class="sig-paren">)</span> &#x2192; luigi.Frame<a class="headerlink" href="#luigi.CompoundFrame.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current frame.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.CompoundFrame.get_transform">
+<code class="descname">get_transform</code><span class="sig-paren">(</span><em>self: luigi.CompoundFrame</em><span class="sig-paren">)</span> &#x2192; lg::Mat3<a class="headerlink" href="#luigi.CompoundFrame.get_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the texture coordinates transform for the current region.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="luigi.CompoundFrame.rect">
+<code class="descname">rect</code><a class="headerlink" href="#luigi.CompoundFrame.rect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="luigi.CompoundFrame.texture">
+<code class="descname">texture</code><a class="headerlink" href="#luigi.CompoundFrame.texture" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="luigi.Entity">
+<em class="property">class </em><code class="descclassname">luigi.</code><code class="descname">Entity</code><span class="sig-paren">(</span><em>self: luigi.Entity</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Entity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>(<strong>entity</strong>) An entity is the most basic type for game objects.</p>
+<p><strong>Lifetime</strong> :</p>
+<p>When all entities are created, the <a class="reference internal" href="#luigi.Entity.start" title="luigi.Entity.start"><code class="xref py py-func docutils literal notranslate"><span class="pre">start()</span></code></a> function is called.</p>
+<p>Then, <a class="reference internal" href="#luigi.Entity.update" title="luigi.Entity.update"><code class="xref py py-func docutils literal notranslate"><span class="pre">update()</span></code></a> and just after <a class="reference internal" href="#luigi.Entity.draw" title="luigi.Entity.draw"><code class="xref py py-func docutils literal notranslate"><span class="pre">draw()</span></code></a> are called until <code class="docutils literal notranslate"><span class="pre">dead</span></code> is set
+to true or the scene stops.</p>
+<p>After the last draw call, <a class="reference internal" href="#luigi.Entity.stop" title="luigi.Entity.stop"><code class="xref py py-func docutils literal notranslate"><span class="pre">stop()</span></code></a> is called.</p>
+<dl class="attribute">
+<dt id="luigi.Entity.dead">
+<code class="descname">dead</code><a class="headerlink" href="#luigi.Entity.dead" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="luigi.Entity.draw">
+<code class="descname">draw</code><span class="sig-paren">(</span><em>self: luigi.Entity</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Entity.draw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called each frame after update.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Entity.start">
+<code class="descname">start</code><span class="sig-paren">(</span><em>self: luigi.Entity</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Entity.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>When all entities are created.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Entity.stop">
+<code class="descname">stop</code><span class="sig-paren">(</span><em>self: luigi.Entity</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Entity.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>When the entity is dead or the scene changes.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Entity.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>self: luigi.Entity</em>, <em>dt: float</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Entity.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called each frame.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>dt</strong> – The time elapsed since the last frame, in seconds.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="luigi.Error">
+<em class="property">exception </em><code class="descclassname">luigi.</code><code class="descname">Error</code><a class="headerlink" href="#luigi.Error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>(<strong>error</strong>) A Luigi exception, use it only from C++.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="luigi.Frame">
+<em class="property">class </em><code class="descclassname">luigi.</code><code class="descname">Frame</code><a class="headerlink" href="#luigi.Frame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>(<strong>frame</strong>) Base class for texture regions.</p>
+<dl class="method">
+<dt id="luigi.Frame.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><em>self: luigi.Frame</em><span class="sig-paren">)</span> &#x2192; luigi.Frame<a class="headerlink" href="#luigi.Frame.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clones itself.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Frame.get_transform">
+<code class="descname">get_transform</code><span class="sig-paren">(</span><em>self: luigi.Frame</em><span class="sig-paren">)</span> &#x2192; lg::Mat3<a class="headerlink" href="#luigi.Frame.get_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the texture coordinates transform for the current region.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="luigi.Frame.rect">
+<code class="descname">rect</code><a class="headerlink" href="#luigi.Frame.rect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="luigi.Frame.texture">
+<code class="descname">texture</code><a class="headerlink" href="#luigi.Frame.texture" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="luigi.Game">
+<em class="property">class </em><code class="descclassname">luigi.</code><code class="descname">Game</code><span class="sig-paren">(</span><em>self: luigi.Game</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Game" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>(<strong>game</strong>) Handles the window and the game environment.</p>
+<dl class="method">
+<dt id="luigi.Game.add">
+<code class="descname">add</code><span class="sig-paren">(</span><em>self: luigi.Game</em>, <em>entity: luigi.Entity</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Game.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds an entity.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Game.add_cam">
+<code class="descname">add_cam</code><span class="sig-paren">(</span><em>self: luigi.Game</em>, <em>name: str</em>, <em>height: float = 100</em><span class="sig-paren">)</span> &#x2192; luigi.Camera<a class="headerlink" href="#luigi.Game.add_cam" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a camera.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Game.add_layer">
+<code class="descname">add_layer</code><span class="sig-paren">(</span><em>self: luigi.Game</em>, <em>name: str</em>, <em>z: int = 0</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Game.add_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a layer.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>z</strong> – The z index of the layer, if a layer has a greater z than another layer,
+then all drawable entities within this layer will be drawn above the entities
+within the other layer.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Game.add_music">
+<code class="descname">add_music</code><span class="sig-paren">(</span><em>self: luigi.Game</em>, <em>name: str</em>, <em>file: str</em><span class="sig-paren">)</span> &#x2192; luigi.Music<a class="headerlink" href="#luigi.Game.add_music" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a music.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Game.add_scene">
+<code class="descname">add_scene</code><span class="sig-paren">(</span><em>self: luigi.Game</em>, <em>name: str</em>, <em>factory: Callable[[]</em>, <em>None] = None</em>, <em>default_cam: str = 'main'</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Game.add_scene" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a scene factory.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>factory</strong> – This function is called when the scene is loaded, used to add entities to the scene.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Don’t add cameras to the scene in the factory function, add cameras
+in the <code class="docutils literal notranslate"><span class="pre">construct</span></code> function when <a class="reference internal" href="#luigi.Game.run" title="luigi.Game.run"><code class="xref py py-func docutils literal notranslate"><span class="pre">run()</span></code></a> is called and set cameras’ properties
+in the <code class="docutils literal notranslate"><span class="pre">factory</span></code> function.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Game.add_shader">
+<code class="descname">add_shader</code><span class="sig-paren">(</span><em>self: luigi.Game, name: str, vertex_file: str, fragment_file: str, uniforms: List[str]</em><span class="sig-paren">)</span> &#x2192; lg::Shader<a class="headerlink" href="#luigi.Game.add_shader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new shader.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>uniforms</strong> – The list of all uniforms names.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Game.add_sound">
+<code class="descname">add_sound</code><span class="sig-paren">(</span><em>self: luigi.Game</em>, <em>name: str</em>, <em>file: str</em><span class="sig-paren">)</span> &#x2192; luigi.Sound<a class="headerlink" href="#luigi.Game.add_sound" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a sound.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Game.add_texture">
+<code class="descname">add_texture</code><span class="sig-paren">(</span><em>self: luigi.Game</em>, <em>name: str</em>, <em>file: str</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Game.add_texture" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new texture.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Game.exit">
+<code class="descname">exit</code><span class="sig-paren">(</span><em>self: luigi.Game</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Game.exit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Terminates the game and closes the window.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="luigi.Game.instance">
+<code class="descname">instance</code><em class="property"> = None</em><a class="headerlink" href="#luigi.Game.instance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="luigi.Game.mouse_pressed">
+<code class="descname">mouse_pressed</code><span class="sig-paren">(</span><em>self: luigi.Game</em>, <em>button: str</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#luigi.Game.mouse_pressed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether a mouse button is down.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Game.mouse_typed">
+<code class="descname">mouse_typed</code><span class="sig-paren">(</span><em>self: luigi.Game</em>, <em>button: str</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#luigi.Game.mouse_typed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether a mouse button is clicked.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Game.play">
+<code class="descname">play</code><span class="sig-paren">(</span><em>self: luigi.Game</em>, <em>name: str</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Game.play" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plays a sound or a music.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Game.pressed">
+<code class="descname">pressed</code><span class="sig-paren">(</span><em>self: luigi.Game</em>, <em>key: str</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#luigi.Game.pressed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether a key is down.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Game.run">
+<code class="descname">run</code><span class="sig-paren">(</span><em>self: luigi.Game, construct: Callable[[], None], screen: luigi.ScreenConfig</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Game.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Launches a window and runs the game.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>construct</strong> – This function is called when the game is initialized,
+used to create scenes, cameras and set properties.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Game.set_cam">
+<code class="descname">set_cam</code><span class="sig-paren">(</span><em>self: luigi.Game</em>, <em>name: str</em><span class="sig-paren">)</span> &#x2192; luigi.Camera<a class="headerlink" href="#luigi.Game.set_cam" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the current camera.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The current camera, which is Camera.main.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Game.set_clear_color">
+<code class="descname">set_clear_color</code><span class="sig-paren">(</span><em>self: luigi.Game</em>, <em>r: float</em>, <em>g: float</em>, <em>b: float</em>, <em>a: float = 1</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Game.set_clear_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the background color.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Game.set_default_volume">
+<code class="descname">set_default_volume</code><span class="sig-paren">(</span><em>self: luigi.Game</em>, <em>sounds: float = -1</em>, <em>musics: float = -1</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Game.set_default_volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the default volume for sounds and musics.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">A value of -1 describes an unchanged default volume.</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Game.set_fade_duration">
+<code class="descname">set_fade_duration</code><span class="sig-paren">(</span><em>self: luigi.Game</em>, <em>seconds: float</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Game.set_fade_duration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the music transition duration.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Game.set_layer">
+<code class="descname">set_layer</code><span class="sig-paren">(</span><em>self: luigi.Game</em>, <em>name: str</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Game.set_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects the layer to add entities.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Game.set_scene">
+<code class="descname">set_scene</code><span class="sig-paren">(</span><em>self: luigi.Game</em>, <em>name: str</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Game.set_scene" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a scene.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If this function is called in construct,
+it sets the default scene (the first scene to create).</p>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Game.set_texture_filter">
+<code class="descname">set_texture_filter</code><span class="sig-paren">(</span><em>self: luigi.Game</em>, <em>filter: str</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Game.set_texture_filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the filter mode for textures created after this call.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filter</strong> – The filter applied to the texture.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Filter types</strong> :</p>
+<ul class="simple">
+<li>pixel : No blur when scaling the texture (nearest).</li>
+<li>blur : Blur when scaling the texture (linear).</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Game.typed">
+<code class="descname">typed</code><span class="sig-paren">(</span><em>self: luigi.Game</em>, <em>key: str</em><span class="sig-paren">)</span> &#x2192; bool<a class="headerlink" href="#luigi.Game.typed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether a key is typed (is down and was up the last frame).</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="luigi.IndexedFrame">
+<em class="property">class </em><code class="descclassname">luigi.</code><code class="descname">IndexedFrame</code><span class="sig-paren">(</span><em>self: luigi.IndexedFrame, texture_name: str, regions: List[lg::Box], i: int = 0</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.IndexedFrame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#luigi.Frame" title="luigi.Frame"><code class="xref py py-class docutils literal notranslate"><span class="pre">luigi.Frame</span></code></a></p>
+<p>(<strong>frame</strong>) Like <a class="reference internal" href="#luigi.Region" title="luigi.Region"><code class="xref py py-class docutils literal notranslate"><span class="pre">Region</span></code></a> but the region can be changed with the index <code class="docutils literal notranslate"><span class="pre">i</span></code>.</p>
+<dl class="method">
+<dt id="luigi.IndexedFrame.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><em>self: luigi.IndexedFrame</em><span class="sig-paren">)</span> &#x2192; luigi.Frame<a class="headerlink" href="#luigi.IndexedFrame.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clones itself.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.IndexedFrame.get_transform">
+<code class="descname">get_transform</code><span class="sig-paren">(</span><em>self: luigi.IndexedFrame</em><span class="sig-paren">)</span> &#x2192; lg::Mat3<a class="headerlink" href="#luigi.IndexedFrame.get_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the texture coordinates transform for the current region.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="luigi.IndexedFrame.i">
+<code class="descname">i</code><a class="headerlink" href="#luigi.IndexedFrame.i" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="luigi.IndexedFrame.rect">
+<code class="descname">rect</code><a class="headerlink" href="#luigi.IndexedFrame.rect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="luigi.IndexedFrame.texture">
+<code class="descname">texture</code><a class="headerlink" href="#luigi.IndexedFrame.texture" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="luigi.Mat3">
+<em class="property">class </em><code class="descclassname">luigi.</code><code class="descname">Mat3</code><a class="headerlink" href="#luigi.Mat3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>(<strong>maths</strong>) A 3x3 matrix.</p>
+<dl class="staticmethod">
+<dt id="luigi.Mat3.create_id">
+<em class="property">static </em><code class="descname">create_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span> &#x2192; luigi.Mat3<a class="headerlink" href="#luigi.Mat3.create_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Identity matrix.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="luigi.Mat3.create_rst">
+<em class="property">static </em><code class="descname">create_rst</code><span class="sig-paren">(</span><em>x: float</em>, <em>y: float</em>, <em>width: float = 1</em>, <em>height: float = 1</em>, <em>rot: float = 0</em><span class="sig-paren">)</span> &#x2192; luigi.Mat3<a class="headerlink" href="#luigi.Mat3.create_rst" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotate -&gt; Scale -&gt; Translate transformation matrix.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="luigi.Mat3.create_srt">
+<em class="property">static </em><code class="descname">create_srt</code><span class="sig-paren">(</span><em>x: float</em>, <em>y: float</em>, <em>width: float = 1</em>, <em>height: float = 1</em>, <em>rot: float = 0</em><span class="sig-paren">)</span> &#x2192; luigi.Mat3<a class="headerlink" href="#luigi.Mat3.create_srt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scale -&gt; Rotate -&gt; Translate transformation matrix.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="luigi.Mat3.create_trs">
+<em class="property">static </em><code class="descname">create_trs</code><span class="sig-paren">(</span><em>x: float</em>, <em>y: float</em>, <em>width: float = 1</em>, <em>height: float = 1</em>, <em>rot: float = 0</em><span class="sig-paren">)</span> &#x2192; luigi.Mat3<a class="headerlink" href="#luigi.Mat3.create_trs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Translate -&gt; Rotate -&gt; Scale transformation matrix.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="luigi.Mat3.create_tsr">
+<em class="property">static </em><code class="descname">create_tsr</code><span class="sig-paren">(</span><em>x: float</em>, <em>y: float</em>, <em>width: float = 1</em>, <em>height: float = 1</em>, <em>rot: float = 0</em><span class="sig-paren">)</span> &#x2192; luigi.Mat3<a class="headerlink" href="#luigi.Mat3.create_tsr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Translate -&gt; Scale -&gt; Rotate transformation matrix.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="luigi.Mouse">
+<em class="property">class </em><code class="descclassname">luigi.</code><code class="descname">Mouse</code><a class="headerlink" href="#luigi.Mouse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>(<strong>inputs</strong>) Handles the mouse, this class is static.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Property pos:</th><td class="field-body">Describes the mouse position in a int 2-tuple.</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="luigi.Mouse.pos">
+<code class="descname">pos</code><a class="headerlink" href="#luigi.Mouse.pos" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="luigi.Music">
+<em class="property">class </em><code class="descclassname">luigi.</code><code class="descname">Music</code><a class="headerlink" href="#luigi.Music" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>(<strong>audio</strong>) A looping music, when the music is changed, a transition is played.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">MP3 is NOT supported due to licensing issues.
+Only WAV, OGG/Vorbis and FLAC are supported.</p>
+</div>
+<dl class="method">
+<dt id="luigi.Music.play">
+<code class="descname">play</code><span class="sig-paren">(</span><em>self: luigi.Music</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Music.play" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plays the music, a transition is also played.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Music.set_loop">
+<code class="descname">set_loop</code><span class="sig-paren">(</span><em>self: luigi.Music</em>, <em>loop: bool = False</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Music.set_loop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets whether the music is a loop.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Music.set_pos">
+<code class="descname">set_pos</code><span class="sig-paren">(</span><em>self: luigi.Music</em>, <em>x: float</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Music.set_pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes the 1D position of the music.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Music.set_volume">
+<code class="descname">set_volume</code><span class="sig-paren">(</span><em>self: luigi.Music</em>, <em>vol: float</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Music.set_volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes the sound volume.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>vol</strong> – The volume between 0 and 100.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Music.stop">
+<code class="descname">stop</code><span class="sig-paren">(</span><em>self: luigi.Music</em>, <em>fade_out: bool = True</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Music.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops the music, a transition is also played if <code class="docutils literal notranslate"><span class="pre">fade_out</span></code>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="luigi.Region">
+<em class="property">class </em><code class="descclassname">luigi.</code><code class="descname">Region</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#luigi.Region" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#luigi.Frame" title="luigi.Frame"><code class="xref py py-class docutils literal notranslate"><span class="pre">luigi.Frame</span></code></a></p>
+<p>(<strong>frame</strong>) Describes an (axis aligned) rectangle in a texture.</p>
+<p>The constructor can take only the texture name to create a region over
+the entire texture.</p>
+<p>Overloaded function.</p>
+<ol class="arabic simple">
+<li>__init__(self: luigi.Region, texture_name: str) -&gt; None</li>
+<li>__init__(self: luigi.Region, texture_name: str, rect: lg::Box) -&gt; None</li>
+</ol>
+<dl class="method">
+<dt id="luigi.Region.copy">
+<code class="descname">copy</code><span class="sig-paren">(</span><em>self: luigi.Region</em><span class="sig-paren">)</span> &#x2192; luigi.Frame<a class="headerlink" href="#luigi.Region.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clones itself.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Region.get_transform">
+<code class="descname">get_transform</code><span class="sig-paren">(</span><em>self: luigi.Region</em><span class="sig-paren">)</span> &#x2192; lg::Mat3<a class="headerlink" href="#luigi.Region.get_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the texture coordinates transform for the current region.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="luigi.Region.rect">
+<code class="descname">rect</code><a class="headerlink" href="#luigi.Region.rect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="luigi.Region.texture">
+<code class="descname">texture</code><a class="headerlink" href="#luigi.Region.texture" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="luigi.Scene">
+<em class="property">class </em><code class="descclassname">luigi.</code><code class="descname">Scene</code><a class="headerlink" href="#luigi.Scene" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>Gathers multiple layers of entities, created with a scene factory.</p>
+<dl class="method">
+<dt id="luigi.Scene.add">
+<code class="descname">add</code><span class="sig-paren">(</span><em>self: luigi.Scene</em>, <em>entity: luigi.Entity</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Scene.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds an entity to the current layer.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Scene.add_layer">
+<code class="descname">add_layer</code><span class="sig-paren">(</span><em>self: luigi.Scene</em>, <em>name: str</em>, <em>z: int = 0</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Scene.add_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a layer with index z.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="luigi.Scene.current">
+<code class="descname">current</code><em class="property"> = None</em><a class="headerlink" href="#luigi.Scene.current" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="luigi.Scene.set_layer">
+<code class="descname">set_layer</code><span class="sig-paren">(</span><em>self: luigi.Scene</em>, <em>name: str</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Scene.set_layer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a layer.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="luigi.ScreenConfig">
+<em class="property">class </em><code class="descclassname">luigi.</code><code class="descname">ScreenConfig</code><span class="sig-paren">(</span><em>self: luigi.ScreenConfig</em>, <em>title: str</em>, <em>width: int</em>, <em>height: int</em>, <em>fps: float</em>, <em>resizable: bool = True</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.ScreenConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>(<strong>game</strong>) Describes the window / the screen, used to run the game.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="luigi.Shader">
+<em class="property">class </em><code class="descclassname">luigi.</code><code class="descname">Shader</code><a class="headerlink" href="#luigi.Shader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>(<strong>shader</strong>) A GPU program.</p>
+<p>To set uniforms, call <code class="docutils literal notranslate"><span class="pre">set_&lt;type&gt;</span></code> with the name of the uniform.
+This method is less efficient than setting a uniform by its id retrieved
+with <a class="reference internal" href="#luigi.Shader.get_uniform" title="luigi.Shader.get_uniform"><code class="xref py py-func docutils literal notranslate"><span class="pre">get_uniform()</span></code></a>, after that, call <code class="docutils literal notranslate"><span class="pre">set_uniform_&lt;type&gt;</span></code>.</p>
+<dl class="staticmethod">
+<dt id="luigi.Shader.get">
+<em class="property">static </em><code class="descname">get</code><span class="sig-paren">(</span><em>name: str</em><span class="sig-paren">)</span> &#x2192; luigi.Shader<a class="headerlink" href="#luigi.Shader.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the shader associated to this name.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Shader.get_uniform">
+<code class="descname">get_uniform</code><span class="sig-paren">(</span><em>self: luigi.Shader</em>, <em>name: str</em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#luigi.Shader.get_uniform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves the id of the uniform.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Shader.set_1f">
+<code class="descname">set_1f</code><span class="sig-paren">(</span><em>self: luigi.Shader</em>, <em>name: str</em>, <em>x: float</em><span class="sig-paren">)</span> &#x2192; luigi.Shader<a class="headerlink" href="#luigi.Shader.set_1f" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="luigi.Shader.set_2f">
+<code class="descname">set_2f</code><span class="sig-paren">(</span><em>self: luigi.Shader</em>, <em>name: str</em>, <em>x: float</em>, <em>y: float</em><span class="sig-paren">)</span> &#x2192; luigi.Shader<a class="headerlink" href="#luigi.Shader.set_2f" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="luigi.Shader.set_3f">
+<code class="descname">set_3f</code><span class="sig-paren">(</span><em>self: luigi.Shader</em>, <em>name: str</em>, <em>x: float</em>, <em>y: float</em>, <em>z: float</em><span class="sig-paren">)</span> &#x2192; luigi.Shader<a class="headerlink" href="#luigi.Shader.set_3f" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="luigi.Shader.set_4f">
+<code class="descname">set_4f</code><span class="sig-paren">(</span><em>self: luigi.Shader</em>, <em>name: str</em>, <em>r: float</em>, <em>g: float</em>, <em>b: float</em>, <em>a: float</em><span class="sig-paren">)</span> &#x2192; luigi.Shader<a class="headerlink" href="#luigi.Shader.set_4f" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="luigi.Shader.set_mat3">
+<code class="descname">set_mat3</code><span class="sig-paren">(</span><em>self: luigi.Shader</em>, <em>name: str</em>, <em>mat: luigi.Mat3</em><span class="sig-paren">)</span> &#x2192; luigi.Shader<a class="headerlink" href="#luigi.Shader.set_mat3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="luigi.Shader.set_uniform_1f">
+<code class="descname">set_uniform_1f</code><span class="sig-paren">(</span><em>self: luigi.Shader</em>, <em>id: int</em>, <em>x: float</em><span class="sig-paren">)</span> &#x2192; luigi.Shader<a class="headerlink" href="#luigi.Shader.set_uniform_1f" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="luigi.Shader.set_uniform_2f">
+<code class="descname">set_uniform_2f</code><span class="sig-paren">(</span><em>self: luigi.Shader</em>, <em>id: int</em>, <em>x: float</em>, <em>y: float</em><span class="sig-paren">)</span> &#x2192; luigi.Shader<a class="headerlink" href="#luigi.Shader.set_uniform_2f" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="luigi.Shader.set_uniform_3f">
+<code class="descname">set_uniform_3f</code><span class="sig-paren">(</span><em>self: luigi.Shader</em>, <em>id: int</em>, <em>x: float</em>, <em>y: float</em>, <em>z: float</em><span class="sig-paren">)</span> &#x2192; luigi.Shader<a class="headerlink" href="#luigi.Shader.set_uniform_3f" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="luigi.Shader.set_uniform_4f">
+<code class="descname">set_uniform_4f</code><span class="sig-paren">(</span><em>self: luigi.Shader</em>, <em>id: int</em>, <em>r: float</em>, <em>g: float</em>, <em>b: float</em>, <em>a: float</em><span class="sig-paren">)</span> &#x2192; luigi.Shader<a class="headerlink" href="#luigi.Shader.set_uniform_4f" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="luigi.Shader.set_uniform_mat3">
+<code class="descname">set_uniform_mat3</code><span class="sig-paren">(</span><em>self: luigi.Shader</em>, <em>id: int</em>, <em>mat: luigi.Mat3</em><span class="sig-paren">)</span> &#x2192; luigi.Shader<a class="headerlink" href="#luigi.Shader.set_uniform_mat3" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="luigi.Sound">
+<em class="property">class </em><code class="descclassname">luigi.</code><code class="descname">Sound</code><a class="headerlink" href="#luigi.Sound" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pybind11_builtins.pybind11_object</span></code></p>
+<p>(<strong>audio</strong>) A SFX, can be played multiple times and at different positions.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">MP3 is NOT supported due to licensing issues.
+Only WAV, OGG/Vorbis and FLAC are supported.</p>
+</div>
+<dl class="method">
+<dt id="luigi.Sound.play">
+<code class="descname">play</code><span class="sig-paren">(</span><em>self: luigi.Sound</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Sound.play" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plays the sound.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Sound.set_pos">
+<code class="descname">set_pos</code><span class="sig-paren">(</span><em>self: luigi.Sound</em>, <em>x: float</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Sound.set_pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes the 1D position of the sound.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Sound.set_volume">
+<code class="descname">set_volume</code><span class="sig-paren">(</span><em>self: luigi.Sound</em>, <em>vol: float</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Sound.set_volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes the sound volume.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>vol</strong> – The volume between 0 and 100.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="luigi.Sprite">
+<em class="property">class </em><code class="descclassname">luigi.</code><code class="descname">Sprite</code><span class="sig-paren">(</span><em>self: luigi.Sprite</em>, <em>frame: luigi.Frame</em>, <em>shader: str = 'main'</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Sprite" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#luigi.Entity" title="luigi.Entity"><code class="xref py py-class docutils literal notranslate"><span class="pre">luigi.Entity</span></code></a></p>
+<p>(<strong>sprite</strong>) A drawable entity, drawn with a shader, a texture region and a camera (the main camera).</p>
+<p>The sprite’s position describes the center of the texture region.</p>
+<dl class="staticmethod">
+<dt id="luigi.Sprite.create">
+<em class="property">static </em><code class="descname">create</code><span class="sig-paren">(</span><em>texture: str</em>, <em>shader: str = 'main'</em><span class="sig-paren">)</span> &#x2192; luigi.Sprite<a class="headerlink" href="#luigi.Sprite.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new sprite with the whole texture.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Sprite.draw">
+<code class="descname">draw</code><span class="sig-paren">(</span><em>self: luigi.Sprite</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Sprite.draw" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="luigi.Sprite.frame">
+<code class="descname">frame</code><a class="headerlink" href="#luigi.Sprite.frame" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="luigi.Sprite.height">
+<code class="descname">height</code><a class="headerlink" href="#luigi.Sprite.height" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="luigi.Sprite.rect">
+<code class="descname">rect</code><span class="sig-paren">(</span><em>self: luigi.Sprite</em><span class="sig-paren">)</span> &#x2192; luigi.Box<a class="headerlink" href="#luigi.Sprite.rect" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div>Returns the AABB of the sprite.</div></blockquote>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Doesn’t take in account the rotation.</p>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="luigi.Sprite.rot">
+<code class="descname">rot</code><a class="headerlink" href="#luigi.Sprite.rot" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="luigi.Sprite.scale">
+<code class="descname">scale</code><span class="sig-paren">(</span><em>self: luigi.Sprite</em>, <em>factor: float</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Sprite.scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Multiplies width and height by a factor.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="luigi.Sprite.start">
+<code class="descname">start</code><span class="sig-paren">(</span><em>self: luigi.Sprite</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Sprite.start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="luigi.Sprite.stop">
+<code class="descname">stop</code><span class="sig-paren">(</span><em>self: luigi.Sprite</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Sprite.stop" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="luigi.Sprite.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>self: luigi.Sprite</em>, <em>dt: float</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Sprite.update" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="luigi.Sprite.width">
+<code class="descname">width</code><a class="headerlink" href="#luigi.Sprite.width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="luigi.Sprite.x">
+<code class="descname">x</code><a class="headerlink" href="#luigi.Sprite.x" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="luigi.Sprite.y">
+<code class="descname">y</code><a class="headerlink" href="#luigi.Sprite.y" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="inputs.html" class="btn btn-neutral float-right" title="Inputs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Luigi’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Cc618
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
