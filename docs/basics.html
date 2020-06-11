@@ -1,0 +1,336 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Basics &mdash; Luigi  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Inputs" href="inputs.html" />
+    <link rel="prev" title="Welcome to Luigi’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Luigi
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Basics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-game-object">The Game object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#game-construction">Game construction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#scene-creation">Scene creation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#entity-implementation">Entity implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#game-management">Game management</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="inputs.html">Inputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="luigi.html">Luigi</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Luigi</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Basics</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/basics.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="basics">
+<h1>Basics<a class="headerlink" href="#basics" title="Permalink to this headline">¶</a></h1>
+<p>This guide explains how to get started with Luigi, we will discover how to make
+a simple game with a controllable player and a menu.</p>
+<img alt="https://github.com/Cc618/Luigi/raw/master/examples/basics/doc/basics.gif" src="https://github.com/Cc618/Luigi/raw/master/examples/basics/doc/basics.gif" />
+<p>The code for this guide is <a class="reference external" href="https://github.com/Cc618/Luigi/blob/master/examples/basics">here (examples/basics)</a>.</p>
+<div class="section" id="the-game-object">
+<h2>The Game object<a class="headerlink" href="#the-game-object" title="Permalink to this headline">¶</a></h2>
+<p>In Luigi, many functions are gathered in the Game object, it is used firstly to create a window and run the game.</p>
+<p>Let’s create and configure the game :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">luigi</span> <span class="k">as</span> <span class="nn">lg</span>
+
+<span class="n">game</span> <span class="o">=</span> <span class="n">lg</span><span class="o">.</span><span class="n">Game</span><span class="p">()</span>
+<span class="n">conf</span> <span class="o">=</span> <span class="n">lg</span><span class="o">.</span><span class="n">ScreenConfig</span><span class="p">(</span><span class="s1">&#39;Luigi&#39;</span><span class="p">,</span> <span class="mi">600</span><span class="p">,</span> <span class="mi">400</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>These instructions tell luigi that the window will be named Luigi with a size of 600x400 pixels and 60 fps.</p>
+</div>
+<div class="section" id="game-construction">
+<h2>Game construction<a class="headerlink" href="#game-construction" title="Permalink to this headline">¶</a></h2>
+<p>Now, we have to load the game, this is made in the construct method.
+This method serves to load textures and other resources and moreover to register scenes.</p>
+<p>Note that create_game and create_scene will be explained below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">construct</span><span class="p">():</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        When the game is loading</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1"># Textures</span>
+    <span class="n">game</span><span class="o">.</span><span class="n">add_texture</span><span class="p">(</span><span class="s1">&#39;flappy&#39;</span><span class="p">,</span> <span class="s1">&#39;res/flappy.png&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Scenes</span>
+    <span class="n">game</span><span class="o">.</span><span class="n">add_scene</span><span class="p">(</span><span class="s1">&#39;game&#39;</span><span class="p">,</span> <span class="n">create_game</span><span class="p">,</span> <span class="n">default_cam</span><span class="o">=</span><span class="s1">&#39;game&#39;</span><span class="p">)</span>
+    <span class="n">game</span><span class="o">.</span><span class="n">add_scene</span><span class="p">(</span><span class="s1">&#39;menu&#39;</span><span class="p">,</span> <span class="n">create_menu</span><span class="p">,</span> <span class="n">default_cam</span><span class="o">=</span><span class="s1">&#39;game&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Cameras</span>
+    <span class="n">game</span><span class="o">.</span><span class="n">add_cam</span><span class="p">(</span><span class="s1">&#39;game&#39;</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+
+    <span class="c1"># Set entry scene</span>
+    <span class="n">game</span><span class="o">.</span><span class="n">set_scene</span><span class="p">(</span><span class="s1">&#39;game&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can add also sounds and more with game.</p>
+<p>This methods registers two scenes named ‘game’ and ‘menu’,
+we give as argument a function that loads the scene, we call this a scene factory.</p>
+</div>
+<div class="section" id="scene-creation">
+<h2>Scene creation<a class="headerlink" href="#scene-creation" title="Permalink to this headline">¶</a></h2>
+<p>Let’s implement create_game, we will use a Player entity, Player will be explained later.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_game</span><span class="p">():</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        When we have to create the game scene</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1"># Set the background blue</span>
+    <span class="n">game</span><span class="o">.</span><span class="n">set_clear_color</span><span class="p">(</span><span class="o">.</span><span class="mi">8</span><span class="p">,</span> <span class="o">.</span><span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># This scene contains only a player</span>
+    <span class="n">game</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Player</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">speed</span><span class="o">=</span><span class="mi">1000</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>This scene contains only a player over a blue background.</p>
+<p>The game.add function adds entities to the current scene, in Luigi,
+an entity is a game object and provides some methods such as start, draw, update and stop.
+Update is the most important method, it is called each frame and aims to update the player movements.</p>
+</div>
+<div class="section" id="entity-implementation">
+<h2>Entity implementation<a class="headerlink" href="#entity-implementation" title="Permalink to this headline">¶</a></h2>
+<p>Luigi provides the Sprite class, this class is an entity with a texture and will be used in the player class :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inherit from Sprite</span>
+<span class="k">class</span> <span class="nc">Player</span><span class="p">(</span><span class="n">lg</span><span class="o">.</span><span class="n">Sprite</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">speed</span><span class="p">):</span>
+        <span class="c1"># The sprite is a texture region from the top left corner of the &#39;flappy&#39; texture</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">lg</span><span class="o">.</span><span class="n">Region</span><span class="p">(</span><span class="s1">&#39;flappy&#39;</span><span class="p">,</span> <span class="n">lg</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">128</span><span class="p">)))</span>
+
+        <span class="c1"># Position of the sprite</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+
+        <span class="c1"># Custom attribute, the speed in pixels per second</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">speed</span> <span class="o">=</span> <span class="n">speed</span>
+
+    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dt</span><span class="p">):</span>
+        <span class="c1"># Don&#39;t forget to call super</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">dt</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">game</span><span class="o">.</span><span class="n">pressed</span><span class="p">(</span><span class="s1">&#39;left&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-=</span> <span class="bp">self</span><span class="o">.</span><span class="n">speed</span> <span class="o">*</span> <span class="n">dt</span>
+
+        <span class="k">if</span> <span class="n">game</span><span class="o">.</span><span class="n">pressed</span><span class="p">(</span><span class="s1">&#39;right&#39;</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">speed</span> <span class="o">*</span> <span class="n">dt</span>
+
+        <span class="c1"># * More code in the original file *</span>
+
+        <span class="k">if</span> <span class="n">game</span><span class="o">.</span><span class="n">typed</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">):</span>
+            <span class="c1"># Go to menu</span>
+            <span class="n">game</span><span class="o">.</span><span class="n">set_scene</span><span class="p">(</span><span class="s1">&#39;menu&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">game</span><span class="o">.</span><span class="n">typed</span><span class="p">(</span><span class="s1">&#39;K&#39;</span><span class="p">):</span>
+            <span class="c1"># Kill</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">dead</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>The most important part here is the update method, we test whether an input is pressed and we move
+the player by setting the x attribute.
+When M is typed, the scene changes to the menu scene with set_scene.
+We can also remove an entity by setting the dead attribute to True.</p>
+<p>Now, everything is created except create_menu, which is just a function that changes the background color.</p>
+<p>We just have to launch the game with this instruction :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">game</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">construct</span><span class="p">,</span> <span class="n">conf</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You should have a player that moves with the arrow keys and rotates with space.</p>
+<img alt="https://github.com/Cc618/Luigi/raw/master/examples/basics/doc/basics.gif" src="https://github.com/Cc618/Luigi/raw/master/examples/basics/doc/basics.gif" />
+</div>
+<div class="section" id="game-management">
+<h2>Game management<a class="headerlink" href="#game-management" title="Permalink to this headline">¶</a></h2>
+<p>Here is a little summary to help you to manage your game :</p>
+<ol class="arabic simple">
+<li>Configure the game.</li>
+<li>Construct the game (load / register) resources.</li>
+<li>Create scenes.</li>
+<li>Create entities.</li>
+</ol>
+<p>In your code, these instructions should be executed in the reverse order,
+that is to say that entities have to be either created or imported from another python file before scenes.
+The <a class="reference external" href="https://github.com/Cc618/Luigi/blob/master/examples/flappy_bird">Flappy Bird</a> example uses multiple source files to manage the game.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="inputs.html" class="btn btn-neutral float-right" title="Inputs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Luigi’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Cc618
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
