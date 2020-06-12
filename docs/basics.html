@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Inputs" href="inputs.html" />
+    <link rel="next" title="Textures" href="textures.html" />
     <link rel="prev" title="Welcome to Luigi’s documentation!" href="index.html" /> 
 </head>
 
@@ -90,8 +90,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#game-management">Game management</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="textures.html">Textures</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sounds.html">Sounds</a></li>
 <li class="toctree-l1"><a class="reference internal" href="inputs.html">Inputs</a></li>
-<li class="toctree-l1"><a class="reference internal" href="luigi.html">Luigi</a></li>
+<li class="toctree-l1"><a class="reference internal" href="luigi.html">Luigi module reference</a></li>
 </ul>
 
             
@@ -176,8 +178,11 @@ a simple game with a controllable player and a menu.</p>
 </div>
 <div class="section" id="game-construction">
 <h2>Game construction<a class="headerlink" href="#game-construction" title="Permalink to this headline">¶</a></h2>
-<p>Now, we have to load the game, this is made in the construct method.
+<p>Now, we have to load the game, this is made in the construct function.
 This method serves to load textures and other resources and moreover to register scenes.</p>
+<p>In Luigi, we use both object oriented and functional code,
+functions are used to construct the game or create scenes and
+objects are used with entities.</p>
 <p>Note that create_game and create_scene will be explained below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">construct</span><span class="p">():</span>
     <span class="sd">&#39;&#39;&#39;</span>
@@ -200,6 +205,11 @@ This method serves to load textures and other resources and moreover to register
 <p>You can add also sounds and more with game.</p>
 <p>This methods registers two scenes named ‘game’ and ‘menu’,
 we give as argument a function that loads the scene, we call this a scene factory.</p>
+<p>Game gathers methods such as add_scene, add_texture, etc… to register and
+load assets, make sure to load these assets in construct and not in a scene
+or entity constructor.
+To handle these assets, you just have to know the name of the target component like
+in set_scene (this avoid global variables).</p>
 </div>
 <div class="section" id="scene-creation">
 <h2>Scene creation<a class="headerlink" href="#scene-creation" title="Permalink to this headline">¶</a></h2>
@@ -292,7 +302,7 @@ The <a class="reference external" href="https://github.com/Cc618/Luigi/blob/mast
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="inputs.html" class="btn btn-neutral float-right" title="Inputs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="textures.html" class="btn btn-neutral float-right" title="Textures" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Luigi’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

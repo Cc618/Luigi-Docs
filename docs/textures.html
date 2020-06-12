@@ -1,0 +1,315 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Textures &mdash; Luigi  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Sounds" href="sounds.html" />
+    <link rel="prev" title="Basics" href="basics.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Luigi
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Basics</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Textures</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#loading">Loading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#frames-implementation">Frames implementation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#frame-types">Frame types</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#frame">Frame</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#region">Region</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#indexed-frame">Indexed Frame</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#animated-frame">Animated Frame</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compound-frame">Compound Frame</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#utils">Utils</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sounds.html">Sounds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inputs.html">Inputs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="luigi.html">Luigi module reference</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Luigi</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Textures</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/textures.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="textures">
+<h1>Textures<a class="headerlink" href="#textures" title="Permalink to this headline">¶</a></h1>
+<p>This guide explains how texture and frames work together in Luigi.</p>
+<p>First of all, let’s explain what is a texture and a frame :</p>
+<ul class="simple">
+<li>A texture is an image loaded on the GPU, we don’t use directly textures,
+we use texture handlers which describe a texture.</li>
+<li>A frame is a texture region, it can be animated and more.
+We use frames inside a sprite to create animations or just to load less images
+since loading many images can be expensive.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This guide contains code samples of the <a class="reference external" href="https://github.com/Cc618/Luigi/blob/master/examples/basics">basics example</a>.</p>
+</div>
+<div class="section" id="loading">
+<h2>Loading<a class="headerlink" href="#loading" title="Permalink to this headline">¶</a></h2>
+<p>To use textures, we need to load an image and associate it with a name.
+We load everything in the construct method.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">construct</span><span class="p">():</span>
+    <span class="n">game</span><span class="o">.</span><span class="n">add_texture</span><span class="p">(</span><span class="s1">&#39;flappy&#39;</span><span class="p">,</span> <span class="s1">&#39;res/flappy.png&#39;</span><span class="p">)</span>
+
+    <span class="c1"># Other assets to load...</span>
+</pre></div>
+</div>
+<p>Now, we just have to remember the name of the texture.</p>
+</div>
+<div class="section" id="frames-implementation">
+<h2>Frames implementation<a class="headerlink" href="#frames-implementation" title="Permalink to this headline">¶</a></h2>
+<p>Let’s see a simple implementation of frames, we will use a simple texture region.</p>
+<p>Here is the texture :</p>
+<img alt="https://github.com/Cc618/Luigi/raw/master/examples/basics/res/flappy.png" src="https://github.com/Cc618/Luigi/raw/master/examples/basics/res/flappy.png" />
+<p>We want to retrieve the top left blue bird, the dimensions of the blue bird region are 256 pixels
+for the width and 128 pixels for the height.
+Moreover, the x and y coordinates are computed from the top left corner of the texture so
+the position is (0, 0).</p>
+<p>Let’s use the Region class which describes a non animated texture region.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Player</span><span class="p">(</span><span class="n">lg</span><span class="o">.</span><span class="n">Sprite</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">speed</span><span class="p">):</span>
+        <span class="c1"># The sprite is a texture region from the top left corner of the &#39;flappy&#39; texture</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">lg</span><span class="o">.</span><span class="n">Region</span><span class="p">(</span><span class="s1">&#39;flappy&#39;</span><span class="p">,</span> <span class="n">lg</span><span class="o">.</span><span class="n">Box</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">128</span><span class="p">)))</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Arguments’ name are explicitly written only for readibility and can be omitted.</p>
+</div>
+<p>We now have a cool blue bird :</p>
+<img alt="https://github.com/Cc618/Luigi/raw/master/examples/basics/doc/game.png" src="https://github.com/Cc618/Luigi/raw/master/examples/basics/doc/game.png" />
+</div>
+<div class="section" id="frame-types">
+<h2>Frame types<a class="headerlink" href="#frame-types" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="frame">
+<h3>Frame<a class="headerlink" href="#frame" title="Permalink to this headline">¶</a></h3>
+<p>Luigi provides subclasses of the Frame class, this class is abstract and can’t be used directly.</p>
+<p>It contains the copy() and get_transform() methods used more often on the C++ side of Luigi.
+Attributes are more useful, rect describes the hitbox of the region and texture it’s image.</p>
+</div>
+<div class="section" id="region">
+<h3>Region<a class="headerlink" href="#region" title="Permalink to this headline">¶</a></h3>
+<p>A Region is a simple texture region, an AABB that contains the sprite’s texture.</p>
+</div>
+<div class="section" id="indexed-frame">
+<h3>Indexed Frame<a class="headerlink" href="#indexed-frame" title="Permalink to this headline">¶</a></h3>
+<p>Indexed Frame gathers multiple regions and one texture, we can change the texture region with the
+i property which is the index of the current region.</p>
+</div>
+<div class="section" id="animated-frame">
+<h3>Animated Frame<a class="headerlink" href="#animated-frame" title="Permalink to this headline">¶</a></h3>
+<p>This frame is used to change at a target frame rate several regions.
+It inherits from IndexedFrame and takes in addition the FPS argument.</p>
+</div>
+<div class="section" id="compound-frame">
+<h3>Compound Frame<a class="headerlink" href="#compound-frame" title="Permalink to this headline">¶</a></h3>
+<p>This one is useful to make complex animations.
+We can change a frame with a name, the frame can be any subclass of Frame.
+For example, in the <a class="reference external" href="https://github.com/Cc618/Luigi/blob/master/examples/flappy_bird">Flappy Bird example</a>
+we use it to make multiple skins, a blue and red one.</p>
+</div>
+</div>
+<div class="section" id="utils">
+<h2>Utils<a class="headerlink" href="#utils" title="Permalink to this headline">¶</a></h2>
+<p>When using complex or just long animations, we have many boilerplate code since we have to provide
+a list of Box objects for an animation, the code can be easier to read with Box.tape.
+This static method creates a list of Box objects with the same dimensions.</p>
+<p>To illustrate, the player of the <a class="reference external" href="https://github.com/Cc618/Luigi/blob/master/examples/flappy_bird">Flappy Bird example</a>
+contains multiple calls to Box.tape :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># In Player.__init__</span>
+<span class="n">lg</span><span class="o">.</span><span class="n">CompoundFrame</span><span class="p">(</span>
+    <span class="p">{</span>
+        <span class="s1">&#39;blue&#39;</span><span class="p">:</span> <span class="n">lg</span><span class="o">.</span><span class="n">IndexedFrame</span><span class="p">(</span><span class="s1">&#39;flappy&#39;</span><span class="p">,</span> <span class="n">lg</span><span class="o">.</span><span class="n">Box</span><span class="o">.</span><span class="n">tape</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">bird_tex_width</span><span class="p">,</span> <span class="n">bird_tex_height</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">horizontal</span><span class="o">=</span><span class="kc">False</span><span class="p">)),</span>
+        <span class="s1">&#39;red&#39;</span><span class="p">:</span> <span class="n">lg</span><span class="o">.</span><span class="n">IndexedFrame</span><span class="p">(</span><span class="s1">&#39;flappy&#39;</span><span class="p">,</span> <span class="n">lg</span><span class="o">.</span><span class="n">Box</span><span class="o">.</span><span class="n">tape</span><span class="p">(</span><span class="n">bird_tex_width</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">bird_tex_width</span><span class="p">,</span> <span class="n">bird_tex_height</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">horizontal</span><span class="o">=</span><span class="kc">False</span><span class="p">)),</span>
+    <span class="p">})</span>
+</pre></div>
+</div>
+<p>Box.tape takes as arguments in addition to the coordinates and dimensions the number of frames and the horizontality of the tape.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sounds.html" class="btn btn-neutral float-right" title="Sounds" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="basics.html" class="btn btn-neutral float-left" title="Basics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Cc618
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
