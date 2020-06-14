@@ -166,7 +166,7 @@
             
   <div class="section" id="textures">
 <h1>Textures<a class="headerlink" href="#textures" title="Permalink to this headline">¶</a></h1>
-<p>This guide explains how texture and frames work together in Luigi.</p>
+<p>This guide explains how textures and frames work together in Luigi.</p>
 <p>First of all, let’s explain what is a texture and a frame :</p>
 <ul class="simple">
 <li>A texture is an image loaded on the GPU, we don’t use directly textures,
@@ -198,7 +198,7 @@ We load everything in the construct method.</p>
 <img alt="https://github.com/Cc618/Luigi/raw/master/examples/basics/res/flappy.png" src="https://github.com/Cc618/Luigi/raw/master/examples/basics/res/flappy.png" />
 <p>We want to retrieve the top left blue bird, the dimensions of the blue bird region are 256 pixels
 for the width and 128 pixels for the height.
-Moreover, the x and y coordinates are computed from the top left corner of the texture so
+Moreover, the x and y coordinates are relative to the top left corner of the texture so
 the position is (0, 0).</p>
 <p>Let’s use the Region class which describes a non animated texture region.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Player</span><span class="p">(</span><span class="n">lg</span><span class="o">.</span><span class="n">Sprite</span><span class="p">):</span>
@@ -220,7 +220,7 @@ the position is (0, 0).</p>
 <h3>Frame<a class="headerlink" href="#frame" title="Permalink to this headline">¶</a></h3>
 <p>Luigi provides subclasses of the Frame class, this class is abstract and can’t be used directly.</p>
 <p>It contains the copy() and get_transform() methods used more often on the C++ side of Luigi.
-Attributes are more useful, rect describes the hitbox of the region and texture it’s image.</p>
+Attributes are more useful, rect describes the hitbox of the region and texture its image.</p>
 </div>
 <div class="section" id="region">
 <h3>Region<a class="headerlink" href="#region" title="Permalink to this headline">¶</a></h3>
@@ -246,7 +246,7 @@ we use it to make multiple skins, a blue and red one.</p>
 </div>
 <div class="section" id="utils">
 <h2>Utils<a class="headerlink" href="#utils" title="Permalink to this headline">¶</a></h2>
-<p>When using complex or just long animations, we have many boilerplate code since we have to provide
+<p>When using complex or just long animations, we have much boilerplate code since we have to provide
 a list of Box objects for an animation, the code can be easier to read with Box.tape.
 This static method creates a list of Box objects with the same dimensions.</p>
 <p>To illustrate, the player of the <a class="reference external" href="https://github.com/Cc618/Luigi/blob/master/examples/flappy_bird">Flappy Bird example</a>

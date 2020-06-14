@@ -35,6 +35,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Changelog" href="changelog.html" />
     <link rel="prev" title="Inputs" href="inputs.html" /> 
 </head>
 
@@ -86,6 +87,7 @@
 <li class="toctree-l1"><a class="reference internal" href="sounds.html">Sounds</a></li>
 <li class="toctree-l1"><a class="reference internal" href="inputs.html">Inputs</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Luigi module reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
 </ul>
 
             
@@ -761,6 +763,12 @@ it sets the default scene (the first scene to create).</p>
 Only WAV, OGG/Vorbis and FLAC are supported.</p>
 </div>
 <dl class="method">
+<dt id="luigi.Music.get_volume">
+<code class="descname">get_volume</code><span class="sig-paren">(</span><em>self: luigi.Music</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#luigi.Music.get_volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current sound volume (between 0 and 100).</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="luigi.Music.play">
 <code class="descname">play</code><span class="sig-paren">(</span><em>self: luigi.Music</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Music.play" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plays the music, a transition is also played.</p>
@@ -956,6 +964,12 @@ with <a class="reference internal" href="#luigi.Shader.get_uniform" title="luigi
 Only WAV, OGG/Vorbis and FLAC are supported.</p>
 </div>
 <dl class="method">
+<dt id="luigi.Sound.get_volume">
+<code class="descname">get_volume</code><span class="sig-paren">(</span><em>self: luigi.Sound</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#luigi.Sound.get_volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current sound volume (between 0 and 100).</p>
+</dd></dl>
+
+<dl class="method">
 <dt id="luigi.Sound.play">
 <code class="descname">play</code><span class="sig-paren">(</span><em>self: luigi.Sound</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#luigi.Sound.play" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plays the sound.</p>
@@ -1073,6 +1087,8 @@ Only WAV, OGG/Vorbis and FLAC are supported.</p>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="changelog.html" class="btn btn-neutral float-right" title="Changelog" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="inputs.html" class="btn btn-neutral float-left" title="Inputs" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
